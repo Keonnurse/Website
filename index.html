@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keon Nurse | Embedded hardware and networks</title>
+<meta name="description" content="Keon Nurse, Psychology and Computing Science student at the University of Alberta. Embedded hardware, live-event networks, and a home server built from the cable up.">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#home">Keon Nurse</a>
+  <nav aria-label="Sections">
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+    <button id="theme" class="theme-toggle" type="button" hidden>Dark mode</button>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <p class="eyebrow">Edmonton, Alberta · Graduating April 2027</p>
+  <h1>I build embedded hardware and keep live-event networks running.</h1>
+  <p class="lede">Psychology major and Computing Science minor at the University of Alberta. I spent the summer on the timing and network crew at Foote Field, and my evenings on an ESP32 scoreboard and a home server I cabled myself. Looking for work in controls, building automation and IIoT software.</p>
+  <p class="actions">
+    <a class="button" href="mailto:keonkn202@gmail.com">Email me</a>
+    <a class="button ghost" href="https://github.com/Keonnurse">GitHub</a>
+    <a class="button ghost" href="https://www.linkedin.com/in/keon-nurse-408076304/">LinkedIn</a>
+  </p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <article class="project">
+    <div class="project-text">
+      <p class="meta">2026 · ESP32, C++, Bluetooth Low Energy, Fusion 360</p>
+      <h3>ESP32 LED scoreboard</h3>
+      <p>A battery-powered table tennis scoreboard. An ESP32 drives P10 LED matrix panels and takes score input over Bluetooth Low Energy from custom button controls.</p>
+      <ul>
+        <li>Designed the power system around a LiPo cell with TP4056 charging, and wired the ESP32 to the panel's HUB12 interface.</li>
+        <li>Modeled the enclosure, panel rails and stand as parametric Fusion 360 Python scripts, so a dimension change regenerates the part.</li>
+        <li>3D printed all parts.</li>
+      </ul>
+    </div>
+    <div class="shots three">
+      <figure>
+        <img src="images/scoreboard-power-system.png" alt="Power diagram: USB-C into a TP4056 charger, LiPo cell, and ESP32" loading="lazy">
+        <figcaption>Power system</figcaption>
+      </figure>
+      <figure>
+        <img src="images/scoreboard-panel-wiring.png" alt="Pin map from the ESP32 dev board to the P10 panel's HUB12 pads" loading="lazy">
+        <figcaption>ESP32 to panel pin map</figcaption>
+      </figure>
+      <figure>
+        <img src="images/scoreboard-enclosure-cad.png" alt="Fusion 360 model of the scoreboard enclosure frame" loading="lazy">
+        <figcaption>Enclosure frame in Fusion 360</figcaption>
+      </figure>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-text">
+      <p class="meta">Ongoing · Linux, Proxmox, Raspberry Pi, Tailscale</p>
+      <h3>Self-hosted home server</h3>
+      <p>A home server and network built from the ground up on mini PCs and Raspberry Pis, in a small rack with a managed switch and patch panel.</p>
+      <ul>
+        <li>Administer Linux and Proxmox hosts on static IPs.</li>
+        <li>Remote access over Tailscale, plus subnetting, gateway and DNS configuration.</li>
+        <li>Hand-run Cat5 cabling between the rack and the rest of the house.</li>
+      </ul>
+    </div>
+    <div class="shots two">
+      <figure>
+        <img src="images/homelab-rack-front.jpg" alt="Front of a small server rack with a patch panel, managed switch and mini PC, and a laptop on top showing Proxmox" loading="lazy">
+        <figcaption>Front: patch panel, switch, mini PC</figcaption>
+      </figure>
+      <figure>
+        <img src="images/homelab-rack-rear.jpg" alt="Rear of the rack showing the punched-down patch panel and cable runs" loading="lazy">
+        <figcaption>Rear: punch-down and cable runs</figcaption>
+      </figure>
+    </div>
+  </article>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <article class="role">
+    <header>
+      <h3>Timing and Network Crew</h3>
+      <p class="meta">University of Alberta Golden Bears and Pandas Track and Field · June 2026 to present, seasonal</p>
+    </header>
+    <p>I competed for this program, and I was asked back to work its meets, including the 5th Annual Edmonton Athletics Invitational in July 2026. I have been invited to return for the 2027 indoor and outdoor seasons.</p>
+    <ul>
+      <li>Set up and supported the meet LAN at Foote Field (router, managed switch, mesh node, long cable runs) for the timing, results and display systems.</li>
+      <li>Configured FinishLynx photo-finish cameras on an isolated static IP network, keeping timing capture off general traffic.</li>
+      <li>Configured dual-NIC Windows 11 mini PCs running FieldLynx field event software.</li>
+      <li>Troubleshot a results service on port 1950 that returned no data, separating network faults from software faults with ipconfig, ping, service checks and Windows Firewall rules.</li>
+      <li>Recovered from a mid-meet camera connection failure by failing over to SMB file sharing and repointing the software's input directories, which kept results flowing.</li>
+    </ul>
+  </article>
+
+  <article class="role">
+    <header>
+      <h3>IT Consultant</h3>
+      <p class="meta">FACTSnet, Alberta non-profit · April 2026 to August 2026</p>
+    </header>
+    <ul>
+      <li>Maintained factsnet.org and its Blogspot templates in HTML, CSS and JavaScript, fixing mobile responsiveness and HTTPS warnings.</li>
+      <li>Administered Google Workspace accounts, including two-factor authentication.</li>
+      <li>Walked non-technical staff and community users through web tools over screen share, adapting the explanation to each person.</li>
+    </ul>
+  </article>
+
+  <p class="also"><strong>Also in summer 2026:</strong> taught web development with EduBlocks in an online after-school coding program, and coached junior high track athletes in groups of up to 30.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt>
+    <dd>C, C++ (Arduino and ESP32), Python, Kotlin (in progress), RISC-V assembly, HTML, CSS, JavaScript</dd>
+    <dt>Networking</dt>
+    <dd>TCP/IP, static IP and DHCP, managed switches, network isolation, SMB file sharing, Windows Firewall, ping and ipconfig diagnostics, Tailscale</dd>
+    <dt>Hardware</dt>
+    <dd>ESP32, Bluetooth Low Energy, P10 LED matrix panels, LiPo and TP4056 power, Raspberry Pi, Fusion 360 with parametric Python scripting, 3D printing</dd>
+    <dt>Systems and tools</dt>
+    <dd>Linux, Windows 11, Proxmox, Git and GitHub, Google Workspace admin, FinishLynx, FieldLynx</dd>
+  </dl>
+  <p class="note">Currently studying for CompTIA Network+.</p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <article class="role">
+    <header>
+      <h3>BA Psychology, Minor in Computing Science</h3>
+      <p class="meta">University of Alberta · Expected April 2027</p>
+    </header>
+    <p>Relevant coursework: CMPUT 174 and 175 (programming), CMPUT 201 (C programming), CMPUT 229 (computer architecture, RISC-V), CMPUT 301 (software engineering, in progress).</p>
+    <p>Psychology and computing together is the point. I can work out why a results service went quiet, and I can also explain it to the person whose screen just went blank.</p>
+  </article>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="lede">The fastest way to reach me is email.</p>
+  <p class="actions">
+    <a class="button" href="mailto:keonkn202@gmail.com">keonkn202@gmail.com</a>
+    <a class="button ghost" href="https://www.linkedin.com/in/keon-nurse-408076304/">LinkedIn</a>
+    <a class="button ghost" href="https://github.com/Keonnurse">GitHub</a>
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>Keon Nurse · Edmonton, Alberta</p>
+</footer>
+
+<dialog id="zoom" aria-label="Enlarged image">
+  <img src="" alt="">
+  <form method="dialog"><button>Close</button></form>
+</dialog>
+
+</body>
+</html>

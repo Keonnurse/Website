@@ -40,29 +40,44 @@
 
   <article class="project">
     <div class="project-text">
-      <p class="meta">2026 · ESP32, C++, Bluetooth Low Energy, Fusion 360</p>
+      <p class="meta">2026 · ESP32, C++, Bluetooth Low Energy, Fusion 360, CadQuery</p>
       <h3>ESP32 LED scoreboard</h3>
       <p>A battery-powered table tennis scoreboard. An ESP32 drives P10 LED matrix panels and takes score input over Bluetooth Low Energy from custom button controls.</p>
       <ul>
         <li>Designed the power system around a LiPo cell with TP4056 charging, and wired the ESP32 to the panel's HUB12 interface.</li>
-        <li>Modeled the enclosure, panel rails and stand as parametric Fusion 360 Python scripts, so a dimension change regenerates the part.</li>
+        <li>Modeled the enclosure, panel rails and stand as parametric Fusion 360 Python scripts, and the button case in CadQuery, so a dimension change regenerates the part.</li>
         <li>3D printed all parts.</li>
       </ul>
     </div>
-    <div class="shots three">
-      <figure>
-        <img src="images/scoreboard-power-system.png" alt="Power diagram: USB-C into a TP4056 charger, LiPo cell, and ESP32" loading="lazy">
-        <figcaption>Power system</figcaption>
-      </figure>
-      <figure>
-        <img src="images/scoreboard-panel-wiring.png" alt="Pin map from the ESP32 dev board to the P10 panel's HUB12 pads" loading="lazy">
-        <figcaption>ESP32 to panel pin map</figcaption>
-      </figure>
-      <figure>
-        <img src="images/scoreboard-enclosure-cad.png" alt="Fusion 360 model of the scoreboard enclosure frame" loading="lazy">
-        <figcaption>Enclosure frame in Fusion 360</figcaption>
-      </figure>
-    </div>
+    <details class="gallery">
+      <summary>Build photos and diagrams <span class="count">6</span></summary>
+      <div class="shots three">
+        <figure>
+          <img src="images/scoreboard-desk.jpg" alt="The finished scoreboard on a desk next to a player button" loading="lazy">
+          <figcaption>On the desk with a player button</figcaption>
+        </figure>
+        <figure>
+          <img src="images/scoreboard-panel-photo.jpg" alt="ESP32 wired to the back of the P10 panel in its printed frame" loading="lazy">
+          <figcaption>ESP32 wired to the panel</figcaption>
+        </figure>
+        <figure>
+          <img src="images/scoreboard-button-wiring.jpg" alt="Player button electronics: ESP32, TP4056 charger and LiPo cell" loading="lazy">
+          <figcaption>Button electronics on the bench</figcaption>
+        </figure>
+        <figure>
+          <img src="images/scoreboard-power-system.png" alt="Power diagram: USB-C into a TP4056 charger, LiPo cell, and ESP32" loading="lazy">
+          <figcaption>Power system</figcaption>
+        </figure>
+        <figure>
+          <img src="images/scoreboard-panel-wiring.png" alt="Pin map from the ESP32 dev board to the P10 panel's HUB12 pads" loading="lazy">
+          <figcaption>ESP32 to panel pin map</figcaption>
+        </figure>
+        <figure>
+          <img src="images/scoreboard-enclosure-cad.png" alt="Fusion 360 model of the scoreboard enclosure frame" loading="lazy">
+          <figcaption>Enclosure frame in Fusion 360</figcaption>
+        </figure>
+      </div>
+    </details>
   </article>
 
   <article class="project">
@@ -76,16 +91,19 @@
         <li>Hand-run Cat5 cabling between the rack and the rest of the house.</li>
       </ul>
     </div>
-    <div class="shots two">
-      <figure>
-        <img src="images/homelab-rack-front.jpg" alt="Front of a small server rack with a patch panel, managed switch and mini PC, and a laptop on top showing Proxmox" loading="lazy">
-        <figcaption>Front: patch panel, switch, mini PC</figcaption>
-      </figure>
-      <figure>
-        <img src="images/homelab-rack-rear.jpg" alt="Rear of the rack showing the punched-down patch panel and cable runs" loading="lazy">
-        <figcaption>Rear: punch-down and cable runs</figcaption>
-      </figure>
-    </div>
+    <details class="gallery">
+      <summary>Rack photos <span class="count">2</span></summary>
+      <div class="shots two">
+        <figure>
+          <img src="images/homelab-rack-front.jpg" alt="Front of a small server rack with a patch panel, managed switch and mini PC, and a laptop on top showing Proxmox" loading="lazy">
+          <figcaption>Front: patch panel, switch, mini PC</figcaption>
+        </figure>
+        <figure>
+          <img src="images/homelab-rack-rear.jpg" alt="Rear of the rack showing the punched-down patch panel and cable runs" loading="lazy">
+          <figcaption>Rear: punch-down and cable runs</figcaption>
+        </figure>
+      </div>
+    </details>
   </article>
 </section>
 

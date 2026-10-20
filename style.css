@@ -202,3 +202,16 @@ footer p { margin: 0; }
   section, .hero { padding: 1rem 0; }
   body { font-size: 10.5pt; }
 }
+/* Collapsible photo galleries */
+.gallery { margin-top: 1.75rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.gallery > summary {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.75rem 1rem; cursor: pointer; list-style: none;
+  font: 0.8rem var(--mono); color: var(--muted);
+}
+.gallery > summary::-webkit-details-marker { display: none; }
+.gallery > summary::before { content: "▸"; color: var(--accent); transition: transform 0.2s; }
+.gallery[open] > summary::before { transform: rotate(90deg); }
+.gallery > summary:hover { color: var(--text); }
+.gallery .count { margin-left: auto; padding: 0.1rem 0.5rem; border: 1px solid var(--line); border-radius: 999px; }
+.gallery .shots { margin-top: 0; padding: 0 1rem 1rem; }

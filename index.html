@@ -48,6 +48,7 @@
         <li>Modeled the enclosure, panel rails and stand as parametric Fusion 360 Python scripts, and the button case in CadQuery, so a dimension change regenerates the part.</li>
         <li>3D printed all parts.</li>
       </ul>
+      <p class="links"><a href="https://github.com/Keonnurse/esp32-wireless-scoreboard" target="_blank" rel="noopener">Source, wiring and CAD on GitHub ↗</a></p>
     </div>
     <details class="gallery">
       <summary>Build photos and diagrams <span class="count">6</span></summary>
@@ -115,14 +116,39 @@
       <h3>Timing and Network Crew</h3>
       <p class="meta">University of Alberta Golden Bears and Pandas Track and Field · June 2026 to present, seasonal</p>
     </header>
-    <p>I competed for this program, and I was asked back to work its meets, including the 5th Annual Edmonton Athletics Invitational in July 2026. I have been invited to return for the 2027 indoor and outdoor seasons.</p>
-    <ul>
-      <li>Set up and supported the meet LAN at Foote Field (router, managed switch, mesh node, long cable runs) for the timing, results and display systems.</li>
-      <li>Configured FinishLynx photo-finish cameras on an isolated static IP network, keeping timing capture off general traffic.</li>
-      <li>Configured dual-NIC Windows 11 mini PCs running FieldLynx field event software.</li>
-      <li>Troubleshot a results service on port 1950 that returned no data, separating network faults from software faults with ipconfig, ping, service checks and Windows Firewall rules.</li>
-      <li>Recovered from a mid-meet camera connection failure by failing over to SMB file sharing and repointing the software's input directories, which kept results flowing.</li>
+    <div class="event">
+      <img src="images/logo-edmonton-invitational.png" alt="" width="44" height="44">
+      <p><a href="https://yegtrackandfield.com/" target="_blank" rel="noopener">5th Annual Edmonton Athletics Invitational ↗</a>
+      <span>July 12, 2026 · Foote Field · billed as Canada's top-ranked track and field meet, with Olympic and world medallists on the start lists</span></p>
+    </div>
+    <ul class="chips" aria-label="Hands-on with">
+      <li>FinishLynx</li><li>FieldLynx</li><li>NetExchange</li><li>NovaStar LED</li><li>Managed switches</li><li>Fiber media converters</li><li>Static IP isolation</li><li>SMB failover</li>
     </ul>
+    <p>I competed for this program and was asked back to work its meets. I set up, configured and troubleshot the timing, results and display network, and I am returning for the 2027 indoor and outdoor seasons.</p>
+    <ul>
+      <li>Set up and supported the meet LAN at Foote Field for the timing, results and display systems.</li>
+      <li>Kept the FinishLynx photo-finish cameras on an isolated static IP network, away from general traffic.</li>
+      <li>Kept results flowing through a mid-meet camera failure by failing over to SMB file sharing.</li>
+    </ul>
+    <details class="gallery">
+      <summary>The meet setup, the fixes and a network map <span class="count">more</span></summary>
+      <div class="more">
+        <ul>
+          <li>Configured dual-NIC Windows 11 mini PCs and tablets running FieldLynx for the field events.</li>
+          <li>Supported the NetExchange results pipeline that feeds the NovaStar LED scoreboard and live online results.</li>
+          <li>A results service on port 1950 returned no data. I split network faults from software faults with ipconfig, ping, service checks and Windows Firewall rules.</li>
+          <li>Cameras dropped mid-meet on a suspected address conflict. I failed over to a shared folder over SMB and repointed the software's input directories, so results kept flowing.</li>
+          <li>Traced an LED board power failure to an undersized supply and replaced it with a higher-wattage unit.</li>
+          <li>Wrote the crew's IT reference knowledge base, now on version 4, so every meet is repeatable.</li>
+        </ul>
+        <div class="shots one">
+          <figure>
+            <img src="images/meet-network-topology.png" alt="Simplified meet network: isolated photo-finish cameras and timing PC, field event stations on venue Wi-Fi, venue switching, results hub feeding the LED scoreboard, router feeding live online results" loading="lazy">
+            <figcaption>Simplified meet network, no addresses shown</figcaption>
+          </figure>
+        </div>
+      </div>
+    </details>
   </article>
 
   <article class="role">
@@ -131,13 +157,28 @@
       <p class="meta">FACTSnet, Alberta non-profit · April 2026 to August 2026</p>
     </header>
     <ul>
-      <li>Maintained factsnet.org and its Blogspot templates in HTML, CSS and JavaScript, fixing mobile responsiveness and HTTPS warnings.</li>
-      <li>Administered Google Workspace accounts, including two-factor authentication.</li>
-      <li>Walked non-technical staff and community users through web tools over screen share, adapting the explanation to each person.</li>
+      <li>Supported the organisation's Blogspot sites and Google Workspace accounts.</li>
+      <li>Walked non-technical staff and community users through web tools over screen share.</li>
     </ul>
   </article>
 
-  <p class="also"><strong>Also in summer 2026:</strong> taught web development with EduBlocks in an online after-school coding program, and coached junior high track athletes in groups of up to 30.</p>
+  <article class="role">
+    <header>
+      <h3>Web Development Instructor</h3>
+      <p class="meta">Black Boys Code · Summer 2026</p>
+    </header>
+    <div class="event">
+      <img src="images/logo-black-boys-code.png" alt="" width="44" height="44">
+      <p><a href="https://blackboyscode.ca/" target="_blank" rel="noopener">Black Boys Code ↗</a>
+      <span>After-school STEM programs for Black youth across Canada</span></p>
+    </div>
+    <ul class="chips" aria-label="Hands-on with">
+      <li>EduBlocks</li><li>Web basics</li><li>Online teaching</li>
+    </ul>
+    <ul>
+      <li>Taught web development with EduBlocks to students in an online after-school coding program.</li>
+    </ul>
+  </article>
 </section>
 
 <section id="skills">

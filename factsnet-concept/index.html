@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FACTSnet | Our Networks (redesign concept)</title>
+<meta name="description" content="FACTSnet administers community, heritage, education and wellness networks across Alberta and Canada.">
+<style>
+:root { --ink:#16323f; --sky:#a9d6e5; --sky-2:#e8f4f8; --bg:#f6fafc; --card:#fff; --muted:#4f6672; --line:#d6e6ee; --accent:#1b6f8f;
+  --doc:#1a73e8; --site:#7b4dc4; --wix:#b7791f; --blog:#2f855a; --page:#4a5568;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font:16px/1.6 var(--sans); color:var(--ink); background:var(--bg); }
+a { color:inherit; }
+.wrap { max-width:68rem; margin:0 auto; padding:0 1.25rem; }
+header { position:sticky; top:0; z-index:5; background:var(--ink); color:#fff; }
+header .wrap { display:flex; align-items:center; gap:1.5rem; min-height:3.75rem; flex-wrap:wrap; }
+.brand { font-weight:700; letter-spacing:.02em; text-decoration:none; font-size:1.15rem; }
+.brand b { color:var(--sky); }
+nav { display:flex; gap:.25rem; flex-wrap:wrap; margin-left:auto; }
+nav a { text-decoration:none; padding:.45rem .7rem; border-radius:6px; font-size:.93rem; opacity:.9; }
+nav a:hover, nav a:focus-visible { background:rgba(255,255,255,.12); opacity:1; }
+.hero { background:linear-gradient(160deg,var(--sky-2),var(--sky)); padding:3.5rem 0 3rem; }
+.hero h1 { font-size:clamp(1.9rem,4vw,2.8rem); line-height:1.15; margin:0 0 .75rem; max-width:22ch; }
+.hero p { max-width:60ch; margin:0; color:#24414d; font-size:1.08rem; }
+.hero .contact { margin-top:1.25rem; }
+.btn { display:inline-block; background:var(--ink); color:#fff; text-decoration:none; padding:.65rem 1.1rem; border-radius:8px; font-weight:600; }
+section { padding:3rem 0 1rem; }
+h2 { font-size:1.5rem; margin:0 0 .35rem; }
+.sub { color:var(--muted); margin:0 0 1.5rem; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(17rem,1fr)); gap:1rem; }
+.card { display:flex; flex-direction:column; gap:.4rem; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1.1rem 1.2rem; text-decoration:none; transition:transform .15s, box-shadow .15s; }
+.card:hover, .card:focus-visible { transform:translateY(-2px); box-shadow:0 6px 18px rgba(22,50,63,.12); }
+.card h3 { margin:.2rem 0 0; font-size:1.08rem; }
+.card p { margin:0; color:var(--muted); font-size:.93rem; flex:1; }
+.go { color:var(--accent); font-weight:600; font-size:.9rem; }
+.badge { align-self:flex-start; font-size:.72rem; font-weight:600; padding:.15rem .55rem; border-radius:999px; color:#fff; white-space:nowrap; }
+.badge.doc { background:var(--doc); } .badge.site { background:var(--site); } .badge.wix { background:var(--wix); }
+.badge.blog { background:var(--blog); } .badge.page { background:var(--page); }
+.legend { display:flex; gap:.5rem; flex-wrap:wrap; align-items:center; font-size:.85rem; color:var(--muted); margin-bottom:1.25rem; }
+.list { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(20rem,1fr)); gap:.5rem; }
+.list a { display:flex; justify-content:space-between; align-items:center; gap:.75rem; padding:.7rem .9rem; background:var(--card); border:1px solid var(--line); border-radius:8px; text-decoration:none; }
+.list a:hover, .list a:focus-visible { border-color:var(--accent); }
+.search { width:100%; max-width:26rem; padding:.65rem .9rem; border:1px solid var(--line); border-radius:8px; font:inherit; margin-bottom:1rem; background:#fff; }
+.count { color:var(--muted); font-size:.9rem; font-weight:400; margin-left:.5rem; }
+footer { margin-top:3rem; padding:2rem 0; background:var(--ink); color:#cfe3ec; font-size:.9rem; }
+footer a { color:#fff; }
+.concept { background:#fff7e0; color:#5c4400; text-align:center; font-size:.85rem; padding:.45rem 1rem; }
+@media (max-width:40rem) { nav { margin-left:0; } }
+</style>
+</head>
+<body id="top">
+<div class="concept">Redesign concept by Keon Nurse. Every link goes to FACTSnet's existing pages, documents and network blogs.</div>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">FACTS<b>net</b></a>
+    <nav aria-label="Main">
+      <a href="#top">Home</a>
+      <a href="https://factsnet4.blogspot.com/p/about.html" target="_blank" rel="noopener">About</a>
+      <a href="https://factsnet4.blogspot.com/p/history.html" target="_blank" rel="noopener">History</a>
+      <a href="https://factsnet4.blogspot.com/p/sponsors.html" target="_blank" rel="noopener">Sponsors</a>
+      <a href="https://hsummers.blogspot.com/" target="_blank" rel="noopener">Opportunities</a>
+      <a href="#networks">Networks</a>
+      <a href="https://factsnet4.blogspot.com/p/contact-us.html" target="_blank" rel="noopener">Contact</a>
+      <a href="https://factsnet-fr.blogspot.com/" target="_blank" rel="noopener">Français</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <h1>Community, heritage and learning networks across Alberta</h1>
+    <p>FACTSnet administers networks on a wide range of topics, from local heritage and education to wellness and faith. Browse the featured networks or search the full directory.</p>
+    <p class="contact"><a class="btn" href="mailto:factsuma@gmail.com">Email the team</a></p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>Featured networks</h2>
+    <div class="legend">Each link shows where it opens:
+      <span class="badge blog">Network blog</span><span class="badge doc">Google Doc</span><span class="badge site">Google Site</span><span class="badge wix">Wix site</span><span class="badge page">FACTSnet page</span>
+    </div>
+    <div class="cards">
+      <a class="card" href="https://globalsoulwellness.blogspot.com/" target="_blank" rel="noopener">
+        <span class="badge blog">Network blog</span>
+        <h3>Global Soul Wellness</h3>
+        <p>Wellness network and resources</p>
+        <span class="go">Open ↗</span>
+      </a>
+      <a class="card" href="https://docs.google.com/document/d/1l4uuvKJT2QbvKLL19LqY9N4JCqWIsczRzdY2kuyynd4/edit?tab=t.0" target="_blank" rel="noopener">
+        <span class="badge doc">Google Doc</span>
+        <h3>Tri-Smart Wellness Opportunities</h3>
+        <p>Current wellness opportunities</p>
+        <span class="go">Open ↗</span>
+      </a>
+      <a class="card" href="https://factsnetuofa.blogspot.com/" target="_blank" rel="noopener">
+        <span class="badge blog">Network blog</span>
+        <h3>FACTSnet UofA</h3>
+        <p>University of Alberta network</p>
+        <span class="go">Open ↗</span>
+      </a>
+      <a class="card" href="https://c150net.blogspot.com/" target="_blank" rel="noopener">
+        <span class="badge blog">Network blog</span>
+        <h3>FACTSnet Canada</h3>
+        <p>Canada-wide network</p>
+        <span class="go">Open ↗</span>
+      </a>
+      <a class="card" href="https://sghnet.blogspot.com/" target="_blank" rel="noopener">
+        <span class="badge blog">Network blog</span>
+        <h3>Spruce Grove Heritage Network</h3>
+        <p>Local heritage and history</p>
+        <span class="go">Open ↗</span>
+      </a>
+      <a class="card" href="https://sites.google.com/view/thesimaproject/home?authuser=0" target="_blank" rel="noopener">
+        <span class="badge site">Google Site</span>
+        <h3>The Story of Indigenous Ministry in Alberta</h3>
+        <p>The SIMA project</p>
+        <span class="go">Open ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Archived networks, 2025</h2>
+    <p class="sub">Networks featured earlier this year.</p>
+    <ul class="list">
+      <li><a href="https://factsnet15-30.blogspot.com/" target="_blank" rel="noopener"><span>Canada 15-30</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://factsnetuofc.blogspot.com/" target="_blank" rel="noopener"><span>FACTSnet UofC</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://factsnetpostsecondary.blogspot.com/" target="_blank" rel="noopener"><span>FACTSnet Post Secondary</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://factsnetsecondary.blogspot.com/" target="_blank" rel="noopener"><span>FACTSnet Secondary</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://factstech2019.wixsite.com/factsnet" target="_blank" rel="noopener"><span>Tri-Smart One (Spruce Grove, Stony Plain, Parkland)</span><span class="badge wix">Wix site</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="networks">
+  <div class="wrap">
+    <h2>All networks <span class="count" id="count"></span></h2>
+    <p class="sub">The full alphabetical directory. Start typing to filter.</p>
+    <input class="search" id="q" type="search" placeholder="Search, e.g. heritage, Christmas, Spruce Grove" aria-label="Search networks">
+    <ul class="list" id="dir">
+      <li><a href="https://abchristmas.blogspot.com/" target="_blank" rel="noopener"><span>Alberta Christmas Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://abculex.blogspot.com/" target="_blank" rel="noopener"><span>Alberta Culture and Education Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://absocstudies.blogspot.com/" target="_blank" rel="noopener"><span>Alberta Social Studies Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://abssgr8.blogspot.com/" target="_blank" rel="noopener"><span>Alberta/Japan Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://inspedcc.blogspot.com/" target="_blank" rel="noopener"><span>Canadian Christian Education &amp; Heritage Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://canadianafacts.blogspot.com/" target="_blank" rel="noopener"><span>Canadiana</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://cafia.blogspot.com/" target="_blank" rel="noopener"><span>Centralta Faith in Action</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://sfacts.blogspot.com/" target="_blank" rel="noopener"><span>FACTS School Networks</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://abvalue.blogspot.com/" target="_blank" rel="noopener"><span>FACTS Values Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://facts07.blogspot.com/" target="_blank" rel="noopener"><span>FACTS: Family And Community Twining Society</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://leadprojplan.blogspot.com/" target="_blank" rel="noopener"><span>FACTSnet CTS/Community Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://factsnet1.blogspot.com/" target="_blank" rel="noopener"><span>FACTSnet Index</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://hsummers.blogspot.com/" target="_blank" rel="noopener"><span>FACTSnet Summer Programs</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://blogednet.blogspot.com/" target="_blank" rel="noopener"><span>FACTSnet Workshops &amp; Seminars (Google Applications)</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://abcredu.blogspot.com/" target="_blank" rel="noopener"><span>Faith in Action Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://hohchristmas.blogspot.com/" target="_blank" rel="noopener"><span>Hills of Hope Christmas</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://factsbr.blogspot.com/" target="_blank" rel="noopener"><span>History of Stony Plain and Churches</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://compiarts.blogspot.com/" target="_blank" rel="noopener"><span>Information Technology in Education &amp; the Arts</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://inspedsae.blogspot.com/" target="_blank" rel="noopener"><span>Inspiring Education: Igniting Heritage (ESSMY)</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://inspedt.blogspot.com/" target="_blank" rel="noopener"><span>Inspiring Educational and Heritage Dialogue</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://jvaluenet.blogspot.com/" target="_blank" rel="noopener"><span>Japanese Values Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://legalh.blogspot.com/" target="_blank" rel="noopener"><span>Legal (Alberta) Heritage Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://makefr.blogspot.com/" target="_blank" rel="noopener"><span>Make, Fix and Recycle</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://morinc.blogspot.com/" target="_blank" rel="noopener"><span>Morinville Community Networks</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://morinvillehf.blogspot.com/" target="_blank" rel="noopener"><span>Morinville Heritage Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://stalbertalbertahistoryinformation.blogspot.com/" target="_blank" rel="noopener"><span>Newcomers and Visitors to Canada Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://musicedu1.blogspot.com/" target="_blank" rel="noopener"><span>Oh Canada Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://pacalberta.blogspot.com/" target="_blank" rel="noopener"><span>Parents As Coaches Alberta</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://parcoach.blogspot.com/" target="_blank" rel="noopener"><span>Parents As Coaches Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://slangnet.blogspot.com/" target="_blank" rel="noopener"><span>Second Language Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://sgchristmas.blogspot.com/" target="_blank" rel="noopener"><span>Spruce Grove Christmas</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://sgrovenet.blogspot.com/" target="_blank" rel="noopener"><span>Spruce Grove Community Networks</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://sghnet.blogspot.com/" target="_blank" rel="noopener"><span>Spruce Grove Heritage</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://sachristmas.blogspot.com/" target="_blank" rel="noopener"><span>St. Albert Christmas</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://sahistoryn.blogspot.com/" target="_blank" rel="noopener"><span>St. Albert Historical Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://spchristmas.blogspot.com/" target="_blank" rel="noopener"><span>Stony Plain Christmas</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://tricnet.blogspot.com/" target="_blank" rel="noopener"><span>Tri-Community Networks</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://trihert.blogspot.com/" target="_blank" rel="noopener"><span>Tri-Heritage Network</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://rebuilda.blogspot.com/" target="_blank" rel="noopener"><span>Uniting for Children &amp; Youth Networks</span><span class="badge blog">Network blog</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Related links</h2>
+    <p class="sub">Archives, collections and documents.</p>
+    <ul class="list">
+      <li><a href="https://cinet1.blogspot.com/" target="_blank" rel="noopener"><span>Collaborative Information Networks</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://factsnet1.blogspot.com/" target="_blank" rel="noopener"><span>FACTSnet Index Archive</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://francophones-factsnet.blogspot.com/" target="_blank" rel="noopener"><span>FACTSnet Français Archives</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://mchsalum1.blogspot.com/" target="_blank" rel="noopener"><span>MCHS Alumni</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://mental-health-factsnet.blogspot.com/" target="_blank" rel="noopener"><span>Mental Health</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://sgrovenet.blogspot.com/2011/04/annual-monolog-on-dialogue.html" target="_blank" rel="noopener"><span>Monologue to Encourage Dialogue</span><span class="badge blog">Network blog</span></a></li>
+      <li><a href="https://docs.google.com/document/d/e/2PACX-1vQ-IhDOR5Ix6yUyJUI-qhe0QHE7JLB-efU3jdHmFwweF5LVe5XYWycnz230zbGO9Bdfsd8kZkC_Ra2j/pub" target="_blank" rel="noopener"><span>Published Collections</span><span class="badge doc">Google Doc</span></a></li>
+      <li><a href="https://docs.google.com/document/d/1q9oEr2dT4ctfEEOjCEleFe45p645BdJ9/edit" target="_blank" rel="noopener"><span>Recovering the Nativity and Tri-Smart Christmas</span><span class="badge doc">Google Doc</span></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>FACTSnet, Family And Community Twining Society · <a href="mailto:factsuma@gmail.com">factsuma@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+  const q = document.getElementById('q');
+  const items = [...document.querySelectorAll('#dir li')];
+  const count = document.getElementById('count');
+  const show = () => {
+    const t = q.value.trim().toLowerCase();
+    let n = 0;
+    items.forEach((li) => { const hit = li.textContent.toLowerCase().includes(t); li.hidden = !hit; if (hit) n++; });
+    count.textContent = '(' + n + ')';
+  };
+  q.addEventListener('input', show);
+  show();
+</script>
+</body>
+</html>

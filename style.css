@@ -215,3 +215,30 @@ footer p { margin: 0; }
 .gallery > summary:hover { color: var(--text); }
 .gallery .count { margin-left: auto; padding: 0.1rem 0.5rem; border: 1px solid var(--line); border-radius: 999px; }
 .gallery .shots { margin-top: 0; padding: 0 1rem 1rem; }
+
+/* Role logo right beside the title */
+.title-row { display: flex; align-items: center; gap: 0.85rem; }
+.title-row h3 { margin: 0; }
+.title-row .role-logo { width: 3.5rem; height: 3.5rem; object-fit: contain; flex: none; }
+
+/* Linked event or organisation line */
+.event { margin: 0.9rem 0 0.25rem; }
+.event p { margin: 0; }
+.event a { font-weight: 600; text-decoration: none; }
+.event a:hover { text-decoration: underline; }
+.event span { display: block; font-size: 0.88rem; color: var(--muted); }
+
+/* Hands-on tags */
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0.9rem 0; }
+.chips li { font: 0.74rem var(--mono); padding: 0.2rem 0.6rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+.chips li + li { margin-top: 0; }
+
+/* Extra detail inside a dropdown */
+.gallery .more { padding: 0 1rem 1rem; }
+.gallery .more .shots { padding: 0; margin-top: 1rem; }
+.shots.one figure img { height: auto; object-fit: contain; }
+.links { margin-top: 1rem; font-size: 0.92rem; }
+
+@media (max-width: 34rem) {
+  .title-row .role-logo { width: 2.75rem; height: 2.75rem; }
+}

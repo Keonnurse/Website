@@ -54,16 +54,16 @@
       <summary>Build photos and diagrams <span class="count">6</span></summary>
       <div class="shots three">
         <figure>
-          <img src="images/scoreboard-desk.jpg" alt="The finished scoreboard on a desk next to a player button" loading="lazy">
-          <figcaption>On the desk with a player button</figcaption>
+          <img src="images/scoreboard-button-wiring.jpg" alt="Player button electronics: ESP32, TP4056 charger and LiPo cell" loading="lazy">
+          <figcaption>Button electronics on the bench</figcaption>
         </figure>
         <figure>
           <img src="images/scoreboard-panel-photo.jpg" alt="ESP32 wired to the back of the P10 panel in its printed frame" loading="lazy">
           <figcaption>ESP32 wired to the panel</figcaption>
         </figure>
         <figure>
-          <img src="images/scoreboard-button-wiring.jpg" alt="Player button electronics: ESP32, TP4056 charger and LiPo cell" loading="lazy">
-          <figcaption>Button electronics on the bench</figcaption>
+          <img src="images/scoreboard-desk.jpg" alt="The finished scoreboard on a desk next to a player button" loading="lazy">
+          <figcaption>On the desk with a player button</figcaption>
         </figure>
         <figure>
           <img src="images/scoreboard-power-system.png" alt="Power diagram: USB-C into a TP4056 charger, LiPo cell, and ESP32" loading="lazy">
@@ -113,38 +113,38 @@
 
   <article class="role">
     <header>
-      <h3>Timing and Network Crew</h3>
+      <div class="title-row">
+        <h3>Timing and Network Crew</h3>
+        <img class="role-logo" src="images/logo-edmonton-invitational.png" alt="" width="72" height="72">
+      </div>
       <p class="meta">University of Alberta Golden Bears and Pandas Track and Field · June 2026 to present, seasonal</p>
     </header>
     <div class="event">
-      <img src="images/logo-edmonton-invitational.png" alt="" width="44" height="44">
       <p><a href="https://yegtrackandfield.com/" target="_blank" rel="noopener">5th Annual Edmonton Athletics Invitational ↗</a>
       <span>July 12, 2026 · Foote Field · billed as Canada's top-ranked track and field meet, with Olympic and world medallists on the start lists</span></p>
     </div>
     <ul class="chips" aria-label="Hands-on with">
-      <li>FinishLynx</li><li>FieldLynx</li><li>NetExchange</li><li>NovaStar LED</li><li>Managed switches</li><li>Fiber media converters</li><li>Static IP isolation</li><li>SMB failover</li>
+      <li>FinishLynx</li><li>FieldLynx</li><li>NetExchange</li><li>NovaStar LED</li><li>Managed switches</li><li>Fiber media converters</li><li>Mesh Wi-Fi</li><li>Network isolation</li>
     </ul>
-    <p>I competed for this program and was asked back to work its meets. I set up, configured and troubleshot the timing, results and display network, and I am returning for the 2027 indoor and outdoor seasons.</p>
     <ul>
       <li>Set up and supported the meet LAN at Foote Field for the timing, results and display systems.</li>
-      <li>Kept the FinishLynx photo-finish cameras on an isolated static IP network, away from general traffic.</li>
-      <li>Kept results flowing through a mid-meet camera failure by failing over to SMB file sharing.</li>
+      <li>Kept the FinishLynx photo-finish cameras on their own isolated network, away from general traffic.</li>
+      <li>Documented the meet tech setup so every event can be run the same way.</li>
     </ul>
     <details class="gallery">
-      <summary>The meet setup, the fixes and a network map <span class="count">more</span></summary>
+      <summary>The meet setup and network map <span class="count">more</span></summary>
       <div class="more">
         <ul>
-          <li>Configured dual-NIC Windows 11 mini PCs and tablets running FieldLynx for the field events.</li>
-          <li>Supported the NetExchange results pipeline that feeds the NovaStar LED scoreboard and live online results.</li>
-          <li>A results service on port 1950 returned no data. I split network faults from software faults with ipconfig, ping, service checks and Windows Firewall rules.</li>
-          <li>Cameras dropped mid-meet on a suspected address conflict. I failed over to a shared folder over SMB and repointed the software's input directories, so results kept flowing.</li>
-          <li>Traced an LED board power failure to an undersized supply and replaced it with a higher-wattage unit.</li>
-          <li>Wrote the crew's IT reference knowledge base, now on version 4, so every meet is repeatable.</li>
+          <li><strong>Timing:</strong> FinishLynx photo-finish cameras and the timing PC, kept on their own isolated network.</li>
+          <li><strong>Field events:</strong> FieldLynx on tablets and Windows 11 mini PCs, connected over the venue Wi-Fi.</li>
+          <li><strong>Results:</strong> the NetExchange results hub, feeding the LED scoreboard and live online results.</li>
+          <li><strong>Display:</strong> the NovaStar LED scoreboard chain, from controller to panels.</li>
+          <li><strong>Network:</strong> managed switches, fiber media converters, mesh Wi-Fi and long cable runs across Foote Field.</li>
         </ul>
         <div class="shots one">
           <figure>
             <img src="images/meet-network-topology.png" alt="Simplified meet network: isolated photo-finish cameras and timing PC, field event stations on venue Wi-Fi, venue switching, results hub feeding the LED scoreboard, router feeding live online results" loading="lazy">
-            <figcaption>Simplified meet network, no addresses shown</figcaption>
+            <figcaption>Simplified meet network</figcaption>
           </figure>
         </div>
       </div>
@@ -164,11 +164,13 @@
 
   <article class="role">
     <header>
-      <h3>Web Development Instructor</h3>
+      <div class="title-row">
+        <h3>Web Development Instructor</h3>
+        <img class="role-logo" src="images/logo-black-boys-code.png" alt="" width="72" height="72">
+      </div>
       <p class="meta">Black Boys Code · Summer 2026</p>
     </header>
     <div class="event">
-      <img src="images/logo-black-boys-code.png" alt="" width="44" height="44">
       <p><a href="https://blackboyscode.ca/" target="_blank" rel="noopener">Black Boys Code ↗</a>
       <span>After-school STEM programs for Black youth across Canada</span></p>
     </div>

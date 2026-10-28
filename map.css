@@ -1,0 +1,125 @@
+/* Connections map. Uses the colours from style.css, adds one for psychology. */
+
+:root { --psych: #b4532a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --psych: #f59e6b; } }
+:root[data-theme="dark"] { --psych: #f59e6b; }
+
+/* Needs JavaScript, so it stays hidden without it */
+html:not(.js) #map { display: none; }
+
+.map-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1.5rem 0 0.9rem; }
+.map-filters button {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font: 0.78rem var(--mono); color: var(--muted);
+  background: transparent; border: 1px solid var(--line); border-radius: 999px;
+  padding: 0.3rem 0.8rem; cursor: pointer;
+}
+.map-filters button:hover { color: var(--text); }
+.map-filters button[aria-pressed="true"] { color: var(--text); border-color: var(--text); }
+.map-filters button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.map-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%; flex: none; vertical-align: 0.05em; margin-right: 0.4rem; }
+.map-filters .map-dot { margin-right: 0; }
+.map-dot.psych { background: var(--psych); }
+.map-dot.comp { background: var(--accent); }
+.map-dot.built { background: var(--text); }
+
+.map-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 19rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* The graph */
+.map-graph { display: block; width: 100%; height: 30rem; cursor: default; touch-action: pan-y; user-select: none; }
+.map-graph.dragging { cursor: grabbing; }
+
+.map-graph .edge { stroke: var(--line); stroke-width: 1.3; transition: opacity 0.2s, stroke 0.2s; }
+.map-graph .edge.cross { stroke: var(--muted); stroke-opacity: 0.45; stroke-dasharray: 3 4; }
+.map-graph .edge.on { stroke: var(--text); stroke-opacity: 0.85; }
+
+.map-graph .node { cursor: pointer; transition: opacity 0.2s; outline: none; }
+.map-graph .node .hit { fill: transparent; }
+.map-graph .node .core { fill: var(--text); transition: transform 0.15s; }
+.map-graph .node.psych .core { fill: var(--psych); }
+.map-graph .node.comp .core { fill: var(--accent); }
+.map-graph .node:hover .core { transform: scale(1.25); }
+.map-graph .node .ring { fill: none; stroke: var(--text); stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.map-graph .node.sel .ring, .map-graph .node:focus-visible .ring { opacity: 1; }
+.map-graph .node.pulse .ring { animation: map-pulse 0.7s ease-out; }
+@keyframes map-pulse { from { opacity: 1; transform: scale(2); } to { transform: scale(1); } }
+
+.map-graph text {
+  font: 0.75rem var(--sans); fill: var(--muted);
+  paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round;
+  pointer-events: none;
+}
+.map-graph .node.hub text { font-size: 0.875rem; font-weight: 700; fill: var(--text); }
+.map-graph .node.on text, .map-graph .node:hover text { fill: var(--text); }
+
+.map-graph.focus .node:not(.on) { opacity: 0.2; }
+.map-graph.focus .edge:not(.on) { opacity: 0.12; }
+.map-graph[data-filter="psych"] .node:not(.psych),
+.map-graph[data-filter="comp"] .node:not(.comp),
+.map-graph[data-filter="built"] .node:not(.built) { opacity: 0.15; }
+.map-graph[data-filter="psych"] .edge:not(.g-psych),
+.map-graph[data-filter="comp"] .edge:not(.g-comp),
+.map-graph[data-filter="built"] .edge:not(.g-built) { opacity: 0.08; }
+
+/* The side panel */
+.map-panel { position: relative; border-left: 1px solid var(--line); padding: 1.4rem 1.3rem; max-height: 30rem; overflow: auto; }
+.map-panel .meta { display: flex; align-items: center; margin: 0 0 0.4rem; padding-right: 1.5rem; }
+.map-panel .meta .map-dot { margin-right: 0.5rem; }
+.map-panel h3 { font-size: 1.25rem; }
+.map-panel p { margin-top: 0.6rem; font-size: 0.95rem; line-height: 1.55; }
+.map-label { font: 0.72rem var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-top: 1.3rem !important; }
+.map-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem; }
+.map-chips button {
+  display: inline-flex; align-items: center;
+  font: 0.76rem var(--mono); color: var(--text);
+  background: transparent; border: 1px solid var(--line); border-radius: 999px;
+  padding: 0.22rem 0.65rem; cursor: pointer;
+}
+.map-chips button:hover { border-color: var(--text); }
+.map-chips .map-dot { width: 0.45rem; height: 0.45rem; margin-right: 0.4rem; }
+.map-go { margin-top: 1.4rem; font-size: 0.9rem; }
+.map-close {
+  position: absolute; top: 0.9rem; right: 0.9rem;
+  width: 1.75rem; height: 1.75rem; border-radius: 6px;
+  font: 1.1rem/1 var(--sans); color: var(--muted);
+  background: transparent; border: 1px solid transparent; cursor: pointer;
+}
+.map-close:hover { color: var(--text); border-color: var(--line); }
+
+.map-hint { font: 0.75rem var(--mono); color: var(--muted); margin-top: 0.75rem; }
+
+/* Where the map sends you lights up for a moment */
+.map-flash { animation: map-flash 2s ease-out; border-radius: 6px; }
+@keyframes map-flash {
+  0%, 35% { outline: 2px solid var(--accent); outline-offset: 10px; }
+  100% { outline: 2px solid transparent; outline-offset: 10px; }
+}
+
+@media (max-width: 48rem) {
+  .map-wrap { grid-template-columns: 1fr; }
+  .map-graph { height: 24rem; }
+  .map-panel { border-left: 0; border-top: 1px solid var(--line); max-height: none; }
+}
+@media print { #map { display: none; } }
+
+/* Small screens: only hub names until a dot is picked, like Obsidian zoomed out */
+.map-graph.compact .node:not(.hub):not(.on) text { opacity: 0; }
+
+/* Floating look: a soft shadow under each dot (light), a faint glow in its own colour (dark) */
+.map-graph .node .core { filter: drop-shadow(0 4px 3px rgb(28 27 25 / 0.28)); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .map-graph .node.psych .core { filter: drop-shadow(0 0 5px var(--psych)); }
+  :root:not([data-theme="light"]) .map-graph .node.comp .core { filter: drop-shadow(0 0 5px var(--accent)); }
+  :root:not([data-theme="light"]) .map-graph .node.built .core { filter: drop-shadow(0 0 4px rgb(236 235 230 / 0.6)); }
+}
+:root[data-theme="dark"] .map-graph .node.psych .core { filter: drop-shadow(0 0 5px var(--psych)); }
+:root[data-theme="dark"] .map-graph .node.comp .core { filter: drop-shadow(0 0 5px var(--accent)); }
+:root[data-theme="dark"] .map-graph .node.built .core { filter: drop-shadow(0 0 4px rgb(236 235 230 / 0.6)); }

@@ -6,13 +6,16 @@
 <title>Keon Nurse | Embedded hardware and networks</title>
 <meta name="description" content="Keon Nurse, Psychology and Computing Science student at the University of Alberta. Embedded hardware, live-event networks, and a home server built from the cable up.">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="map.css">
 <script src="script.js" defer></script>
+<script src="map.js" defer></script>
 </head>
 <body>
 
 <header class="top">
   <a class="brand" href="#home">Keon Nurse</a>
   <nav aria-label="Sections">
+    <a href="#map">Connections</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
@@ -35,10 +38,26 @@
   </p>
 </section>
 
+<section id="map">
+  <h2>How it connects</h2>
+  <p class="lede">Psychology and computing aren't two separate things for me. Pick a dot to see what it connects to, then jump to it on the page.</p>
+  <div class="map-filters" role="group" aria-label="Highlight a field">
+    <button type="button" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" data-filter="psych" aria-pressed="false"><i class="map-dot psych"></i>Psychology</button>
+    <button type="button" data-filter="comp" aria-pressed="false"><i class="map-dot comp"></i>Computing</button>
+    <button type="button" data-filter="built" aria-pressed="false"><i class="map-dot built"></i>Built</button>
+  </div>
+  <div class="map-wrap">
+    <svg id="map-graph" class="map-graph" role="group" aria-label="Map of how my psychology courses, computing skills and projects connect"></svg>
+    <aside id="map-panel" class="map-panel" aria-live="polite"></aside>
+  </div>
+  <p class="map-hint">Hover to trace the lines. Drag a dot to move it.</p>
+</section>
+
 <section id="projects">
   <h2>Projects</h2>
 
-  <article class="project">
+  <article class="project" id="scoreboard">
     <div class="project-text">
       <p class="meta">2026 · ESP32, C++, Bluetooth Low Energy, Fusion 360, CadQuery</p>
       <h3>ESP32 LED scoreboard</h3>
@@ -81,7 +100,7 @@
     </details>
   </article>
 
-  <article class="project">
+  <article class="project" id="homelab">
     <div class="project-text">
       <p class="meta">Ongoing · Linux, Proxmox, Raspberry Pi, Tailscale</p>
       <h3>Self-hosted home server</h3>
@@ -111,7 +130,7 @@
 <section id="experience">
   <h2>Experience</h2>
 
-  <article class="role">
+  <article class="role" id="meet">
     <header>
       <div class="title-row">
         <h3>Timing and Network Crew</h3>
@@ -151,7 +170,7 @@
     </details>
   </article>
 
-  <article class="role">
+  <article class="role" id="factsnet">
     <header>
       <h3>IT Consultant</h3>
       <p class="meta">FACTSnet, Alberta non-profit · April 2026 to August 2026</p>
@@ -162,7 +181,7 @@
     </ul>
   </article>
 
-  <article class="role">
+  <article class="role" id="bbc">
     <header>
       <div class="title-row">
         <h3>Web Development Instructor</h3>

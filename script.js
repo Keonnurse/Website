@@ -80,4 +80,54 @@
       if (event.target === zoom) zoom.close();
     });
   }
+
+  // 4. Make each collapsed gallery look like something to open:
+  //    a fanned peek of its photos, a clear "View" line, and a round arrow button.
+  //    Without this script the plain toggle still works.
+  document.querySelectorAll('details.gallery').forEach((gallery) => {
+    const summary = gallery.querySelector('summary');
+    if (!summary) return;
+
+    const count = summary.querySelector('.count');
+    const n = count ? count.textContent.trim() : '';
+    if (count) count.remove();
+    const title = summary.textContent.trim();
+    const isPhotos = /^\d+$/.test(n);
+    const what = isPhotos ? `${n} images` : 'details and map';
+    summary.textContent = '';
+
+    const photos = [...gallery.querySelectorAll('img')].slice(0, 3);
+    if (photos.length) {
+      const peek = document.createElement('span');
+      peek.className = 'peek';
+      peek.setAttribute('aria-hidden', 'true');
+      photos.forEach((photo) => {
+        const thumb = document.createElement('img');
+        thumb.src = photo.getAttribute('src');
+        thumb.alt = '';
+        thumb.loading = 'lazy';
+        peek.appendChild(thumb);
+      });
+      summary.appendChild(peek);
+    }
+
+    const text = document.createElement('span');
+    text.className = 'sum-text';
+    const titleEl = document.createElement('span');
+    titleEl.className = 'sum-title';
+    titleEl.textContent = title;
+    const hint = document.createElement('span');
+    hint.className = 'sum-hint';
+    hint.innerHTML = `<span class="when-closed">View ${what}</span><span class="when-open">Hide ${isPhotos ? 'images' : 'details'}</span>`;
+    text.append(titleEl, hint);
+    summary.appendChild(text);
+
+    const arrow = document.createElement('span');
+    arrow.className = 'sum-arrow';
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.innerHTML = '<svg viewBox="0 0 16 16" width="16" height="16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    summary.appendChild(arrow);
+
+    gallery.classList.add('fancy');
+  });
 })();

@@ -6,7 +6,7 @@
 
 /* Needs JavaScript, so it stays hidden without it */
 html:not(.js) #map { display: none; }
-
+.map-cta { margin-top: 1.5rem; }
 .map-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1.5rem 0 0.9rem; }
 .map-filters button {
   display: inline-flex; align-items: center; gap: 0.45rem;
